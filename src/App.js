@@ -436,11 +436,11 @@ function App() {
       </div>
       </div>
       </div>
-      <div id='TOHwrap'>
+      <body>
       <div id='TopOfHistory'>
         <p id='TOHtext'>Reached Top of History!</p>
       </div>
-      </div>
+      </body>
     </div>
   );
 }
