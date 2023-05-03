@@ -1,31 +1,285 @@
-.App {
+html {
+  background-color: rgb(37, 35, 47);
+}
+
+.Box {
+  background-color: rgb(29, 28, 36);
+  width: 700px;
+  height: 60vh;
+  border-radius: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  box-shadow: 0 0 30px;
+  height: fit-content;
+  font-style: 15px;
   text-align: center;
+  padding: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.ChatBox {
+  text-align: center;
+  height: fit-content;
+  font-size: 15px;
+  margin-top: 50px;
+  background-color: red;
+  width: 750px;
+  height: 175px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 30px;
+  background-color: rgb(29, 28, 36);
+
+
+
+}
+
+#UserResponse {
+  margin-top: 25px;
+  background-color: rgb(22, 20, 25);
+  outline: none;
+  height: fit-content;
+  min-height: 125px;
+  width: 400px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  color: white;
+  box-shadow: 10px;
+  font-family: monospace;
+  box-shadow: 0 0 20px rgb(22, 20, 25);
+  text-align: center;
   align-items: center;
+  overflow-wrap: break-word;
+}
+
+#Prev {
+  color: rgba(255, 255, 255, 0.301);
+  margin-top: 100px;
+  background-color: rgb(20, 41, 182, 0.2);
+  height: fit-content;
+  margin-left: 370px;
+  width: 250px;
+  border-radius: 20px 20px 0 20px;
+  font-size: 18px;
+  overflow-wrap: break-word;
+  transition: 0.3s;
+  font-family: monospace;
+  font-weight: 800;
+}
+
+#AIR {
+  color: white;
+  height: fit-content;
+  margin-left: 370px;
+  margin-top: 100px;
+  background-color: rgb(20, 41, 182);
+  width: 250px;
+  border-radius: 20px 20px 0 20px;
+  font-size: 18px;
+  overflow-wrap: break-word;
+  transition: 0.3s;
+  font-family: monospace;
+  font-weight: 800;
+}
+
+#Reset {
+  background-color: rgb(20, 41, 182);
+  border-radius: 20px;
+  height: 60px;
+  box-shadow: 0 0 30px rgb(22, 20, 25);
+  outline: none;
+  border: none;
+  font-family: monospace;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  margin-left: 60px;
+  margin-bottom: 60px;
+  overflow-wrap: break-word;
+  width: 150px;
+}
+
+#Reset:hover {
+  background-color: rgb(12, 40, 219);
+}
+
+.wrapper {
+  background-color: rgb(22, 20, 25, 0.5);
+  width: 750px;
+  border-radius: 20px;
+  margin-right: auto;
+  margin-left: 100px;
+  height: fit-content;
+  margin-top: 25px;
+
+}
+
+.Group {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Harr {
+  color: white;
+  height: fit-content;
+  margin-left: 80px;
+  margin-top: 70px;
+  background-color: rgb(20, 41, 182);
+  width: 250px;
+  border-radius: 20px 20px 0 20px;
+  font-size: 18px;
+  overflow-wrap: break-word;
+  transition: 0.3s;
+  font-family: monospace;
+  font-weight: 800;
+  padding: 0px;
+  transition: 1s;
+
+}
+
+#HistoryB {
+  width: 400px;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 25px;
+  background-color: transparent;
+  border-radius: 20px 0 20px 0;
+  border: none;
+  box-shadow: 0 0 30px;
+  visibility: hidden;
+  max-height: 900px;
+  height: fit-content;
+  outline: none;
+  transition: 1s;
+}
+
+#extrablock {
+  background-color: rgb(22, 20, 25);
+  margin-bottom: 0px;
+  margin-top: 75px;
+  height: 40px;
+}
+
+#block {
+  background-color: rgb(22, 20, 25);
+  margin-top: 10px;
+  height: 23px;
+  border-radius: 0 0 20px 0;
+}
+
+.dots {
+  position: relative;
+  width: 10px;
+  height: 20px;
+  border-radius: 0 200px 200px 0;
+  border: none;
+  margin-left: 0px;
+  background-color: blue;
+  transition: 1s;
+  margin-bottom: 0px;
+}
+
+#History {
+  background-color: rgb(22, 20, 25);
+  border: none;
+  font-family: monospace;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  margin-top: -60px;
+}
+
+#History:hover {
+  background-color: rgb(22, 20, 25, 0.5)
+}
+
+.App {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#topblock {
+  margin-top: -10px;
+  background-color: rgb(22, 20, 25);
+  border: none;
+  width: 80px;
+  height: 23px;
+  border-radius: 20px 0 100px 0;
+}
+
+#helperblock {
+  margin-top: 0px;
+  background-color: rgb(22, 20, 25);
+  border-radius: 20px 0 0 0;
+  width: 400px;
+  height: 10px;
+}
+
+.topbuttons {
+  border-radius: 200px;
+  width: 10px;
+  height: 12px;
+  color: black;
+  border: none;
+  outline: none;
+  margin: 4px;
+}
+
+#Exit {
+  background-color: red;
+  margin-left: 10px;
+}
+
+#Minimize {
+  background-color: yellow;
+}
+
+#Fullscreen {
+  background-color: green;
+}
+
+.Hbutton {
+  position: relative;
+  background-color: transparent;
+  color: rgb(12, 40, 219);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: monospace;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.Hbutton:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#Up {
+  left: 30px;
+  top: 3px;
+  width: 30px;
+  height: 30px;
 }
 
-.heart {
-  color: #ff0000;
-}
-
-.small {
-  font-size: 0.75rem;
+#Down {
+  left: 50px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
 }
