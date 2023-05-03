@@ -358,15 +358,14 @@ h1 {
 #CONclose {
   margin-right: 70px;
 }
-#TOHwrap {
+body {
   position: relative;
-  width: 150px;
 
 }
 #TopOfHistory {
   position: inherit;
-  top: 3vw;
-  left: -1400%; /* -60vw */
+  top: 2vw;
+  left: -60vw; /* -1400% */
   background-color: transparent;
   border-style: solid;
   border-color: red;
