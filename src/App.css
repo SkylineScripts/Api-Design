@@ -116,11 +116,15 @@ h1 {
   background-color: rgb(22, 20, 25, 0.5);
   width: 750px;
   border-radius: 20px;
-  margin-right: auto;
-  margin-left: 100px;
+  margin-right: 50%;
+  margin-left: -350px;
   height: fit-content;
   margin-top: 25px;
+  transition: 1s;
 
+}
+.ConfirmationWrap {
+  position: relative;
 }
 
 .Group {
@@ -146,13 +150,41 @@ h1 {
   font-weight: 800;
   padding: 0px;
   transition: 1s;
+  user-select: none;
+}
 
+#BTT {
+  margin-left: -55px;
+  background-color: transparent;
+  color: rgb(20, 41, 182);
+  font-family: monospace;
+  font-weight: 700;
+  border: none;
+  outline: none;
+}
+
+#BTT:hover {
+  color: rgb(255, 255, 255);
+}
+
+#HInfo {
+  margin-left: 200px;
+  background-color: transparent;
+  color: white;
+  font-family: monospace;
+  font-weight: 700;
+  border: none;
+  outline: none;
+}
+
+#HInfo:hover {
+  color: rgb(20, 41, 182);
 }
 
 #HistoryB {
   width: 400px;
   height: 300px;
-  margin-left: 100px;
+  margin-left: 50px;
   margin-top: 25px;
   background-color: transparent;
   border-radius: 20px 0 20px 0;
@@ -270,16 +302,96 @@ h1 {
 }
 
 #Up {
-  left: 30px;
+  left: 100px;
   top: 3px;
   width: 30px;
   height: 30px;
 }
 
 #Down {
-  left: 50px;
+  left: 100px;
   top: 5px;
   width: 30px;
   height: 30px;
   font-size: 25px;
+}
+#ResetWrap {
+  position: relative;
+}
+#ResetCON {
+  top: -36vw;
+  left: 20vw;
+
+  position: relative;
+  width: 450px;
+  height: 190px;
+  background-color: rgb(22, 20, 25, 0.95);
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: red;
+  visibility: hidden;
+  border-radius: 20px;
+  text-align: center;
+  font-family: monospace;
+  color: white; 
+  font-weight: 500;
+  font-size: 20px;
+}
+.CONbuttons {
+  position: relative;
+}
+.CONbuttons button {
+  background-color: transparent;
+  font-family: monospace;
+  font-weight: 600;
+  color: white;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: red;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+}
+.CONbuttons button:hover {
+  background-color: rgba(255, 255, 255, 0.062);
+}
+#CONclose {
+  margin-right: 70px;
+}
+#TOHwrap {
+  position: relative;
+  width: 150px;
+
+}
+#TopOfHistory {
+  position: inherit;
+  top: 3vw;
+  left: -1400%; /* -60vw */
+  background-color: transparent;
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5px;
+  color: white;
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 15px;
+  height: fit-content;
+  visibility: hidden;
+  transition: 0.5s;
+}
+#TOHtext {
+  padding: 2px;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

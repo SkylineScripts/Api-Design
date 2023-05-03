@@ -4,41 +4,80 @@ function App() {
   let NewSession = true;
   let arr = [];
   let Harr = [];
-  let OpenH = null;
+  let OpenR = null;
+  let OpenH = false;
+  let Resetbutton = null;
+  let NScounter = 0;
+  let Ifmin = null;
 
 
 
   function Append() {
-    if (NewSession != true) {
+    if (NewSession !== true) {
+      NScounter += 1
       let input1 = document.getElementById('UserResponse');
+      let harr0 = document.getElementById("Harr0")
+      let harr1 = document.getElementById("Harr1")
+      let harr2 = document.getElementById("Harr2")
+      let harr3 = document.getElementById("Harr3")
       arr.push(input1.value);
       Harr.push(input1.value)
-      document.getElementById("Harr3").textContent = Harr[Harr.length - 1]
-      document.getElementById("Harr2").textContent = Harr[Harr.length - 2]
-      document.getElementById("Harr1").textContent = Harr[Harr.length - 3]
-      document.getElementById("Harr0").textContent = Harr[Harr.length - 4]
+      harr3.textContent = Harr[Harr.length - 1]
+      harr2.textContent = Harr[Harr.length - 2]
+      harr1.textContent = Harr[Harr.length - 3]
+      harr0.textContent = Harr[Harr.length - 4]
+      if (harr0.textContent === "") {
+        harr0.style.padding = "0px"
+      }
+      if (harr1.textContent === "") {
+        harr1.style.padding = "0px"
+      }
+      if (harr2.textContent === "") {
+        harr2.style.padding = "0px"
+      }
+      if (harr3.textContent === "") {
+        harr3.style.padding = "0px"
+      }
       document.getElementById("Prev").textContent = arr.shift();
       document.getElementById("Prev").style.padding = "20px"
       document.getElementById('AIR').textContent = arr;
     } else if (NewSession === true) {
       let input1 = document.getElementById("UserResponse");
+      let harr0 = document.getElementById("Harr0")
+      let harr1 = document.getElementById("Harr1")
+      let harr2 = document.getElementById("Harr2")
+      let harr3 = document.getElementById("Harr3")
       document.getElementById("Prev").textContent = "";
       document.getElementById("Prev").style.padding = "0px";
       arr.push(input1.value);
       Harr.push(input1.value)
-      document.getElementById("Harr3").textContent = Harr[Harr.length - 1]
-      document.getElementById("Harr2").textContent = Harr[Harr.length - 2]
-      document.getElementById("Harr1").textContent = Harr[Harr.length - 3]
-      document.getElementById("Harr0").textContent = Harr[Harr.length - 4]
+      document.getElementById("AIR").textContent = arr;
+      harr3.textContent = Harr[Harr.length - 1]
+      harr2.textContent = Harr[Harr.length - 2]
+      harr1.textContent = Harr[Harr.length - 3]
+      harr0.textContent = Harr[Harr.length - 4]
+      if (harr0.textContent === "") {
+        harr0.style.padding = "0px"
+      }
+      if (harr1.textContent === "") {
+        harr1.style.padding = "0px"
+      }
+      if (harr2.textContent === "") {
+        harr2.style.padding = "0px"
+      }
+      if (harr3.textContent === "") {
+        harr3.style.padding = "0px"
+      }
 
-
+      NScounter += 1
     }
   }
 
 
 
   function Min() {
-    if (document.getElementById("block").style.visibility != "hidden") {
+    if (document.getElementById("block").style.visibility !== "hidden") {
+      Ifmin = true;
       let Harr0 = document.getElementById("Harr0")
       let Harr1 = document.getElementById("Harr1")
       let Harr2 = document.getElementById("Harr2")
@@ -62,21 +101,16 @@ function App() {
       document.getElementById("block").style.transition = "0.0s"
       document.getElementById("HistoryB").style.height = "30px"
     } else {
-      let Harr0 = document.getElementById("Harr0")
-      let Harr1 = document.getElementById("Harr1")
-      let Harr2 = document.getElementById("Harr2")
-      let Harr3 = document.getElementById("Harr3")
       let dot1 = document.getElementById("Dot1")
-      let extra = document.getElementById("extrablock")
       dot1.style.visibility = "visible"
       dot1.style.width = "400px"
       dot1.style.transition = "1s"
       dot1.style.borderRadius = "0 0 200px 0"
-      Harr0.style.visibility = "visible"
-      Harr1.style.visibility = "visible"
-      Harr2.style.visibility = "visible"
-      Harr3.style.visibility = "visible"
-      extra.style.visibility = "visible"
+      document.getElementById("Harr0").style.visibility = "visible"
+      document.getElementById("Harr1").style.visibility = "visible"
+      document.getElementById("Harr2").style.visibility = "visible"
+      document.getElementById("Harr3").style.visibility = "visible"
+      document.getElementById("extrablock").style.visibility = "visible"
       document.getElementById("block").style.visibility = "visible"
       document.getElementById("block").style.transition = "0.3s"
       document.getElementById("HistoryB").style.height = "fit-content"
@@ -93,9 +127,16 @@ function App() {
     let Harr3 = document.getElementById("Harr3")
     let dot1 = document.getElementById("Dot1")
     let extra = document.getElementById("extrablock")
-    if (document.getElementById("HistoryB").style.visibility != "visible") {
+    if (document.getElementById("HistoryB").style.visibility !== "visible") {
+      document.getElementById("HistoryB").style.height = "fit-content"
+      document.getElementById('wrapperID').style.marginLeft = "100px";
+      document.getElementById('wrapperID').style.marginRight = "auto";
       document.getElementById("HistoryB").style.visibility = "visible"
       document.getElementById("HistoryB").style.backgroundColor = "rgb(29, 28, 36)"
+      Harr0.style.visibility = "visible"
+      Harr1.style.visibility = "visible"
+      Harr2.style.visibility = "visible"
+      Harr3.style.visibility = "visible"
       Harr0.style.backgroundColor = "rgb(20, 41, 182)"
       Harr1.style.backgroundColor = "rgb(20, 41, 182)"
       Harr2.style.backgroundColor = "rgb(20, 41, 182)"
@@ -121,7 +162,10 @@ function App() {
     let Harr3 = document.getElementById("Harr3")
     let dot1 = document.getElementById("Dot1")
     let extra = document.getElementById("extrablock")
-    if (document.getElementById("HistoryB").style.visibility == "visible") {
+    if (document.getElementById("HistoryB").style.visibility === "visible") {
+      if (Ifmin === true) {
+        Ifmin = "Pending"
+      }
       Harr0.style.backgroundColor = "transparent"
       Harr0.style.color = "transparent"
       Harr1.style.backgroundColor = "transparent"
@@ -138,27 +182,86 @@ function App() {
       document.getElementById("block").style.transition = "1s"
       document.getElementById('HistoryB').style.backgroundColor = "transparent"
       document.getElementById("HistoryB").style.visibility = "hidden"
+      setTimeout(WrapperTimeout, 1000)
       OpenH = false;
     }
   }
-  let AddValue = 1;
-  let HCheck = "pending";
+  function WrapperTimeout() {
+    document.getElementById("wrapperID").style.marginLeft = "-350px"
+  }
   function DownHistory() {
     let harr0 = document.getElementById("Harr0")
     let harr1 = document.getElementById("Harr1")
     let harr2 = document.getElementById("Harr2")
     let harr3 = document.getElementById("Harr3")
-    if (AddValue + 3 < Harr.length) {
-      if (HCheck == "valid") {
-        AddValue = AddValue + 1
+    if (Harr.length > 4) {
+    harr3.textContent = harr2.textContent
+    harr2.textContent = harr1.textContent
+    harr1.textContent = harr0.textContent
+    for (let i = -1; i <= Harr.length - 1; i++) {
+      if (Harr[i] === harr1.textContent) {
+        harr0.textContent = Harr[i - 1]
       }
-      HCheck = "valid";
-      harr3.textContent = harr2.textContent
-      harr2.textContent = harr1.textContent
-      harr1.textContent = harr0.textContent
-      if (Harr.length)
-        harr0.textContent = Harr[Harr.length - 4 - AddValue]
+      if (harr0.textContent === "") {
+        harr3.textContent = Harr[3]
+        harr2.textContent = Harr[2]
+        harr1.textContent = Harr[1]
+        harr0.textContent = Harr[0]
+      } else if (harr3.textContent !== "") {
+        harr3.style.padding = "20px"
+      }
     }
+  }
+  }
+
+  function UpHistory() {
+    let harr0 = document.getElementById("Harr0")
+    let harr1 = document.getElementById("Harr1")
+    let harr2 = document.getElementById("Harr2")
+    let harr3 = document.getElementById("Harr3")
+    if (Harr.length > 4) {
+    harr0.textContent = harr1.textContent
+    harr1.textContent = harr2.textContent
+    harr2.textContent = harr3.textContent
+    for (let i = -1; i <= Harr.length - 1; i++) {
+      if (Harr[i] === harr2.textContent) {
+        harr3.textContent = Harr[i + 1]
+      }
+    }
+  }
+    if (harr3.textContent === "") {
+        document.getElementById("TopOfHistory").style.visibility = "visible"
+        document.getElementById("TopOfHistory").style.animation = "shake 0.3s"
+        setTimeout(Animation, 1000)
+        setTimeout(TOHvis, 2000)
+        harr3.textContent = Harr[Harr.length - 1]
+        harr2.textContent = Harr[Harr.length - 2]
+        harr1.textContent = Harr[Harr.length - 3]
+        harr0.textContent = Harr[Harr.length - 4]
+    } else if (harr0.textContent !== "") {
+        harr0.style.padding = "20px"
+    } else if (NScounter < 5) {
+        document.getElementById("TopOfHistory").style.visibility = "visible"
+        document.getElementById("TopOfHistory").style.animation = "shake 0.3s"
+        setTimeout(Animation, 1000)
+        setTimeout(TOHvis, 2000)
+    }
+  }
+  function Animation() {
+    document.getElementById("TopOfHistory").style.animation = "none"
+  }
+  function TOHvis() {
+    document.getElementById("TopOfHistory").style.visibility = "hidden"
+  }
+  function BTTHistory() {
+    let harr0 = document.getElementById("Harr0")
+    let harr1 = document.getElementById("Harr1")
+    let harr2 = document.getElementById("Harr2")
+    let harr3 = document.getElementById("Harr3")
+    harr3.textContent = Harr[Harr.length - 1]
+    harr2.textContent = Harr[Harr.length - 2]
+    harr1.textContent = Harr[Harr.length - 3]
+    harr0.textContent = Harr[Harr.length - 4]
   }
 
 
@@ -169,14 +272,58 @@ function App() {
   }
 
   function Reset() {
-    let Prev = document.getElementById("Prev");
-    document.getElementById('AIR').textContent = "";
-    document.getElementById('AIR').style.padding = "0px";
-    Prev.textContent = "";
-    Prev.style.padding = "0px";
-    Prev.style.transitionDuration = "500ms";
-    arr = [];
-    NewSession = true;
+    if (document.getElementById("Prev").textContent === "") {
+      document.getElementById('ResetCON').style.top = "-25vw"
+    }
+    if (document.getElementById("AIR").textContent === "") {
+      document.getElementById('ResetCON').style.top = "-20vw"
+    }
+    OpenR = true;
+    TempDisable();
+    document.getElementById("ResetCON").style.visibility = "visible"
+    if (OpenH === false) {
+      document.getElementById("ResetCON").style.left = "-11vw"
+    } else {
+      document.getElementById("ResetCON").style.left = "13vw"
+    }
+    if (Resetbutton === true) {
+      Exit();
+      document.getElementById("ResetCON").style.visibility = "hidden"
+      let Prev = document.getElementById("Prev");
+      let harr0 = document.getElementById("Harr0")
+      let harr1 = document.getElementById("Harr1")
+      let harr2 = document.getElementById("Harr2")
+      let harr3 = document.getElementById("Harr3")
+      Harr = [];
+      harr0.style.padding = "0px"
+      harr0.textContent = ""
+      harr1.style.padding = "0px"
+      harr1.textContent = ""
+      harr2.style.padding = "0px"
+      harr2.textContent = ""
+      harr3.style.padding = "0px"
+      harr3.textContent = ""
+      document.getElementById('AIR').textContent = "";
+      document.getElementById('AIR').style.padding = "0px";
+      Prev.textContent = "";
+      Prev.style.padding = "0px";
+      Prev.style.transitionDuration = "500ms";
+      arr = [];
+      NewSession = true;
+      Resetbutton = false;
+      OpenR = false;
+      NScounter = 0;
+      TempDisable();
+    } 
+  }
+  function Close() {
+    document.getElementById("ResetCON").style.visibility = "hidden"
+    OpenR = false;
+    TempDisable();
+  }
+  function ResetVAR() {
+    Resetbutton = true;
+    Reset();
   }
   function ChangePADD() {
     let response = document.getElementById("AIR")
@@ -214,16 +361,16 @@ function App() {
       if (Prev.textContent === "") {
         Prev.style.padding = "0px";
       }
-      if (Harr0.textContent != "") {
+      if (Harr0.textContent !== "") {
         Harr0.style.padding = "20px"
       }
-      if (Harr1.textContent != "") {
+      if (Harr1.textContent !== "") {
         Harr1.style.padding = "20px"
       }
-      if (Harr2.textContent != "") {
+      if (Harr2.textContent !== "") {
         Harr2.style.padding = "20px"
       }
-      if (Harr3.textContent != "") {
+      if (Harr3.textContent !== "") {
         Harr3.style.padding = "20px"
       }
       setTimeout(Send, 0);
@@ -231,8 +378,17 @@ function App() {
     }
   });
 
+  function TempDisable() {
+    if (OpenR === true) {
+      document.getElementById("UserResponse").disabled = true;
+    } else {
+      document.getElementById("UserResponse").disabled = false;
+    }
+  }
+
   return (
     <div className="App">
+      <div id="InfoWrap"></div>
       <div id="HistoryB">
         <div id="helperblock"></div>
         <div id="topblock">
@@ -245,18 +401,21 @@ function App() {
         <div className="Harr" id="Harr1"></div>
         <div className="Harr" id="Harr0"></div>
         <div id="extrablock">
-          <button className='Hbutton' id="Up" >+</button>
+          <button className='Hbutton' id="Up" onClick={UpHistory}>+</button>
           <button className='Hbutton' id="Down" onClick={DownHistory}>-</button>
+          <button id="BTT" onClick={BTTHistory}>Back To Top</button>
+          <button id="HInfo">History</button>
         </div>
         <div id='block'>
           <button className='dots' id='Dot1'></button>
         </div>
       </div>
-      <div className='wrapper'>
+      <div className='ConfirmationWrap'>
+      <div className='wrapper' id='wrapperID'>
         <div className="Box">
           <div className='Group'>
             <button id="History" onClick={History}>H</button>
-            <h1>Api Design</h1>
+            <h1>asdf</h1>
           </div>
           <div id="Prev"></div>
           <div id="AIR">{arr}</div>
@@ -265,6 +424,22 @@ function App() {
           <input type='text' id="UserResponse" autoComplete='off' />
           <button id="Reset" onClick={Reset}>Reset Session</button>
         </div>
+      </div>
+      <div id="ResetWrap">
+      <div id="ResetCON">
+        <p id="TextCON">Are you sure you want to reset your session? <br></br><br></br>
+        *Note: This will reset your history*</p>
+        <div className="CONbuttons">
+        <button id="CONclose" onClick={Close}>Close</button>
+        <button id="CONreset" onClick={ResetVAR}>Reset</button>
+        </div>
+      </div>
+      </div>
+      </div>
+      <div id='TOHwrap'>
+      <div id='TopOfHistory'>
+        <p id='TOHtext'>Reached Top of History!</p>
+      </div>
       </div>
     </div>
   );
